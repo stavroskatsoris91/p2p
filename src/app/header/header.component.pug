@@ -1,0 +1,24 @@
+
+// Toolbar
+.toolbar.board(role='banner')
+    img.logo(alt='Point 2 Point' src='/assets/logo.jpg', routerLink='/')
+    .burger-menu([ngClass]="{active:active}")
+        button((click)="active=!active")
+         div
+         div
+         div
+    ul.menu([ngClass]="{active:active}", (click)="active=false")
+        //- li
+            a((click)='go()') Welcome
+        li
+            a(routerLink='/services') Υπηρεσίες
+        li
+            a(routerLink='/prices') Κοστολόγιση
+        li
+            a(routerLink='/contact') Επικοινωνία
+        //- li
+            a((click)="unsubscribe()") 4
+        //- li
+            .spacer
+            a(aria-label='Angular on twitter' target='_blank' rel='noopener' href='https://twitter.com/angular' title='Twitter')
+                img(src='/assets/twitter.svg')

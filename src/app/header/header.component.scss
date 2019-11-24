@@ -1,0 +1,98 @@
+.board{
+  padding: 0 20px;
+  margin-bottom:0;
+  background-color: #de0131;
+  position: relative;
+  .logo{
+    height: 60px;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+  }
+  ul {
+    margin: 0;
+    margin-left: auto;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    li {
+      float: left;
+    }
+    
+    li a {
+      height: 28px;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      background-color: #111111;
+    }
+  }
+}
+
+.burger-menu{
+  display: none;
+  margin: auto;
+  margin-right: 0;
+  >button{
+    outline: none;
+    cursor: pointer;
+    width: 44px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(41, 37, 47, 1);
+    padding: 4px 0px 0px 8px;
+    border: 1px solid rgb(203, 203, 203);
+    >div{
+      transition: transform .3s;
+      width: 25px;
+      height: 3px;
+      background-color: rgb(203, 203, 203);
+      margin-bottom: 6px;
+    }
+  }
+  &.active{
+    div{
+      &:first-child{
+        transform: translate(0px, 9px) rotate(135deg);
+      }
+      &:nth-child(2){
+        transform: rotateY(90deg);
+      }
+      &:last-child{
+        transform: translate(0px, -9px) rotate(-135deg)
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .board{
+    ul{
+      li{
+        float: none;
+      }
+    }
+  }
+  .menu{
+    // display: none;
+    transition: max-height .5s;
+    max-height: 0px;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    overflow: visible;
+    
+    &.active{
+      max-height: 400px;
+    }
+  }
+  .burger-menu{
+    display: block;
+  }
+}
